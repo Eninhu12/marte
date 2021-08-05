@@ -10,7 +10,7 @@ public class CarrinhoModel {
 	private EnumStatusItemCarrinhoModel status;
 	private Integer qtd;
 	private PerfumeModel p ;
-	private List<ItemCarrinhoModel> itens;
+	public static List<ItemCarrinhoModel> itens;
 	public CarrinhoModel() {
 		this.id=new SplittableRandom().nextLong(100, 1000);
 		this.status=EnumStatusItemCarrinhoModel.INICIALIZADO;

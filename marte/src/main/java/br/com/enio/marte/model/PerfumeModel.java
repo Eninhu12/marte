@@ -1,7 +1,6 @@
 package br.com.enio.marte.model;
 
 import java.math.BigDecimal;
-import java.util.SplittableRandom;
 
 public class PerfumeModel {
 	private String nome;
@@ -9,8 +8,10 @@ public class PerfumeModel {
 	private EnumTipoPerfumeModel tipo;
 	private Long id;
 	
+	private static  long gerador = 0;
+	
 	public PerfumeModel(String nome, BigDecimal valor,EnumTipoPerfumeModel tipo) {
-		this.id=new SplittableRandom().nextLong(10, 100);
+		this.id=++gerador;
 		this.nome=nome;
 		this.valor=valor;
 		this.tipo=tipo;
@@ -30,5 +31,10 @@ public class PerfumeModel {
 
 	public Long getId() {
 		return id;
+	}
+	public void Alterar(String nome,BigDecimal valor,EnumTipoPerfumeModel tipo) {
+		this.nome=nome;
+		this.valor=valor;
+		this.tipo=tipo;
 	}
 }
